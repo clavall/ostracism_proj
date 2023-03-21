@@ -334,7 +334,7 @@ $(function() {
     if(window.QueryString.c !== undefined && !isNaN(parseInt(window.QueryString.c)) && parseInt(window.QueryString.c) > 0 && parseInt(window.QueryString.c) < 4) {
       window.condition = parseInt(window.QueryString.c);
     } else {
-      window.condition = 1; // condition defaults to 1
+      window.condition = 2; // condition defaults to 1
     }
     // participant number must be numeric
     if(window.QueryString.p !== undefined && !isNaN(parseInt(window.QueryString.p))) {
@@ -363,7 +363,7 @@ $(function() {
 
     // the number of likes a person receives depends on the condition
 	// in addition, the number of likes another person receives is adjusted, so that there is the same number of likes overall
-	switch(condition) {
+	switch(window.condition) {
 		case 1:
 			window.settings.condition_likes = settings.condition_1_likes;
 			window.others.posts[1].likes = settings.condition_1_adjusted_likes;
